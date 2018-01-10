@@ -17,7 +17,7 @@ var messageRef = firebase.database().ref('messages');
 document.getElementById('contactForm').addEventListener('submit', submitForm );
 
 
-// Test the Fuunction
+// Submit Form
 function submitForm(e){
     e.preventDefault();
 
@@ -28,7 +28,11 @@ function submitForm(e){
     var phone = getInputVal('phone');
     var message = getInputVal('message');
 
-    console.log(name);
+    // Save Message
+    saveMessage(name, company, email, phone, message);
+
+    //Show Alert
+    document.querySelector('.alert').style.display = 'block';
 }
 
 // Function to get Form Values
@@ -37,13 +41,13 @@ function getInputVal(id){
 }
 
 // save messages to firebase
-function saveMessages(){
+function saveMessage(name, company, email, phone, message){
     var newMessageRef = messageRef.push();
     newMessageRef.set({
         name: name,
         company: company,
         email: email,
         phone: phone,
-        message: messsage
+        message: message
     });
 }
