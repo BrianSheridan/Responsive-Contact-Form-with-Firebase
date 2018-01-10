@@ -9,6 +9,9 @@ var config = {
   };
   firebase.initializeApp(config);
 
+// Reference messages collection
+var messageRef = firebase.database().ref('messages');  
+
 
 // Listen for Form submit
 document.getElementById('contactForm').addEventListener('submit', submitForm );
@@ -31,4 +34,16 @@ function submitForm(e){
 // Function to get Form Values
 function getInputVal(id){
      return document.getElementById(id).value;
+}
+
+// save messages to firebase
+function saveMessages(){
+    var newMessageRef = messageRef.push();
+    newMessageRef.set({
+        name: name,
+        company: company,
+        email: email,
+        phone: phone,
+        message: messsage
+    });
 }
