@@ -1,3 +1,15 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCZ0MnzwN844ryzcseiSKQnkMw2qg704mw",
+    authDomain: "contactform-e1c55.firebaseapp.com",
+    databaseURL: "https://contactform-e1c55.firebaseio.com",
+    projectId: "contactform-e1c55",
+    storageBucket: "contactform-e1c55.appspot.com",
+    messagingSenderId: "210918288653"
+  };
+  firebase.initializeApp(config);
+
+
 // Listen for Form submit
 document.getElementById('contactForm').addEventListener('submit', submitForm );
 
