@@ -33,6 +33,14 @@ function submitForm(e){
 
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
+
+    // Hide alert after 3 seconds
+    setTimeout(function(){
+        document.querySelector('.alert').style.display = 'none';
+    },3000);
+    
+    // clear Form
+    document.getElementById('contactForm').reset();
 }
 
 // Function to get Form Values
